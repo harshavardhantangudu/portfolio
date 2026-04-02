@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsha Portfolio</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* PARTICLES */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* NAVBAR */
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+header a {
+    color: #38bdf8;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 60px;
+    background: linear-gradient(45deg,#38bdf8,#9333ea);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 10%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.6s;
+}
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CARDS */
+.card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #38bdf8;
+}
+
+/* SKILLS */
+.skills span {
+    display: inline-block;
+    background: linear-gradient(45deg,#38bdf8,#9333ea);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+/* CURSOR */
+.cursor {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #38bdf8;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.cursor-follower {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #9333ea;
+    border-radius: 50%;
+    pointer-events: none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<header>
+    <div>Harsha</div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div>
+        <h1>Harsha Vardhan Tangudu</h1>
+        <p id="typing"></p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>Summary</h2>
+    <p>
+        I have been involved in various skill development projects and continuously upskilling myself.
+        I am actively seeking opportunities to enhance my skills and contribute to project success.
+        I am a collaborative team player with strong organizational skills.
+    </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>E-Healthcare Management System</h3>
+        <ul>
+            <li>Developed using Spring Boot</li>
+            <li>Implemented authentication & authorization</li>
+            <li>Secure handling of healthcare data</li>
+            <li>Advanced search & filtering</li>
+            <li>Used dependency injection & auto-configuration</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>Online Food Ordering System</h3>
+        <ul>
+            <li>User authentication system</li>
+            <li>Menu management & payment integration</li>
+            <li>Advanced search & filtering</li>
+            <li>Efficient database handling</li>
+        </ul>
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>Python</span>
+        <span>DSA</span>
+        <span>HTML</span>
+        <span>SQL</span>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <h2>Education</h2>
+    <div class="card">
+        <p>B.Tech – KL University – 2027 – CGPA: 8.88</p>
+        <p>Intermediate – Sri Chaitanya – 2023 – 8.99</p>
+        <p>SSC – Sri Chaitanya – 2021 – 10</p>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+    <h2>Certifications</h2>
+    <div class="card">
+        <p>Database Structures and Management with MySQL</p>
+        <p>Oracle Cloud Infrastructure AI Foundations Associate</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+        <p>Email: harshavardhan17th@gmail.com</p>
+        <p>Phone: 7842700390</p>
+        <p>LinkedIn: linkedin.com/in/harsha-vardhan-7950a72b7</p>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+    particles: { number: { value: 60 }, size: { value: 3 } }
+});
+
+/* typing */
+let text="Aspiring Software Developer 🚀";
+let i=0;
+function typing(){
+ if(i<text.length){
+  document.getElementById("typing").innerHTML+=text[i];
+  i++;
+  setTimeout(typing,50);
+ }
+}
+typing();
+
+/* cursor */
+const c=document.querySelector(".cursor");
+const f=document.querySelector(".cursor-follower");
+let x=0,y=0;
+document.addEventListener("mousemove",e=>{
+ x=e.clientX; y=e.clientY;
+ c.style.left=x+"px"; c.style.top=y+"px";
+});
+function follow(){
+ f.style.left+=(x-f.offsetLeft)/5+"px";
+ f.style.top+=(y-f.offsetTop)/5+"px";
+ requestAnimationFrame(follow);
+}
+follow();
+
+/* scroll animation */
+const sections=document.querySelectorAll("section");
+window.addEventListener("scroll",()=>{
+ sections.forEach(sec=>{
+  if(sec.getBoundingClientRect().top<window.innerHeight-100){
+   sec.classList.add("show");
+  }
+ });
+});
+</script>
+
+</body>
+</html>
